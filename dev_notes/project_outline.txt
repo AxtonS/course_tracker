@@ -1,0 +1,7 @@
+The program should allow the user to add courses with a course code and name. User should be able to add "events", these will contain a title(quiz#, assignment#, final project, whatever they wish), and a date, they will be matched to the course by course code.
+
+User will be able to display events in various formats, they can display by course or by date, or a combination of both. Events should be automatically sorted by date. The display function should allow the user as one of the first options to simply display upcoming events or events for today.
+
+Program should allow the deletion or modification of events or courses themselves. Events should automatically be deleted from the data if the date has passed(or maybe if they are more than a month old perhaps) in order to not take up more memory than necessary.
+
+Finally the data should be persistent in secondary storage, it will read the data files from the program directory on program start and write to the data file on exit.
