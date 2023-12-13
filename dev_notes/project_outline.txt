@@ -21,6 +21,7 @@ Pattern Recognition and data representation:
 -Events will be stored as "course code|name|due date|notes".
 -When matching events to courses the course code can be used as a key.
 -Display events and courses will both have a menu offering to add, remove, or modify items.
+-Display courses used before adding an item or displaying events by course.
 
 Abstraction:
 -When removing courses the user will type the actual course code, however for removing events all the user has to know is the item number from the list.
