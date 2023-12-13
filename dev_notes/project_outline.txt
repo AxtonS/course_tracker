@@ -7,17 +7,22 @@ Program should allow the deletion or modification of events or courses themselve
 Finally the data should be persistent in secondary storage, it will read the data files from the program directory on program start and write to the data file on exit.
 
 Decomposition:
--Load courses into memory from .txt files
--Present menu with options: display courses, display events
--Add course should have course code and name
+-Load courses into memory from .txt files.
+-Present menu with options: display courses, display events.
+-Add course should have course code and name.
 -Remove course by selecting a course code from the display courses list.
--Add event by course code, name, and due date
--Display events either by date, by course, or all
--Remove event works by selecting an item number from the display events option
--Quitting program should offer to save all changes or to quit without saving in case of mistakes
+-Add event by course code, name, due date, and notes.
+-Display events either by date, by course, or all.
+-Remove event works by selecting an item number from the display events option.
+-Quitting program should offer to save all changes or to quit without saving in case of mistakes.
 
 Pattern Recognition and data representation:
--Courses will be stored as "course code|name"
--Events will be stored as "course code|name|due date"
--When matching events to courses the course code can be used as a key
--Display events and courses will both have a menu offering to add, remove, or modify items
+-Courses will be stored as "course code|name".
+-Events will be stored as "course code|name|due date|notes".
+-When matching events to courses the course code can be used as a key.
+-Display events and courses will both have a menu offering to add, remove, or modify items.
+
+Abstraction:
+-When removing courses the user will type the actual course code, however for removing events all the user has to know is the item number from the list.
+-The display functions will simply call a sort function on the array of events prior to displaying them, for items of the same date they should simply remain in the order they were added, courses will always display in order they were added.
+-When quitting the program it should remind the user if any changes were made before offering to save, otherwise it should just allow them to quit the program.
