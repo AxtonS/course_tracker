@@ -1,0 +1,47 @@
+importCourses(const pointer fileName, struct courses[], maxCourses)
+{
+	i = 0, valid = 0, records = 0
+	filePointer = NULL
+	filePointer = fileOpen(fileName, "read")
+
+	if (filePointer != NULL)
+	{
+		for (i = 0; i < maxCourses; i++)
+		{
+			valid = fileScanf(filePointer, "course code | name \n", courses[i].code, courses[i].name)
+			if (valid == 2)
+			{
+				records++
+			}
+		}
+		fileClose(filePointer)
+	} else
+	{
+		printf("Failed to open file\n")
+	}
+	return records
+}
+
+importItems(const pointer fileName, struct items[], maxItems)
+{
+	i = 0, valid = 0, records = 0
+	filePointer = NULL
+	filePointer = fileOpen(fileName, "read")
+
+	if (filePointer != NULL)
+	{
+		for (i = 0; i < maxItems; i++)
+		{
+			valid = fileScanf(filePointer, "course code | name | date | notes \n", items[i].code, items[i].name, items[i].date, items[i].notes)
+			if (valid >= 3)
+			{
+				records++
+			}
+		}
+		fileClose(filePointer)
+	} else
+	{
+		printf("Failed to open file\n")
+	}
+	return records
+}
